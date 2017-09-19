@@ -37,27 +37,29 @@ public class MarshmallowMonster
 	{
 		this.name = name;
 	}
-	public void setEyeCount(int eyeCount)
+	public void seteyeCount(int eyeCount)
 	{
-		this.eyeCount = eyeCount
+		this.eyeCount = eyeCount;
 	}
-	public void setArmCount(int armCount)
+	public void setarmCount(int armCount)
 	{
-		this.armCount = armcount;
+		this.armCount = armCount;
 	}
 	public void TentacleAmount(double tentacleAmount)
 	{
 		this.tentacleAmount = tentacleAmount;
 	}
 	
-	public void setBlop(boolean hasBloop)
+	public void setBloop(boolean hasBloop)
 	{
 		this.hasBloop = hasBloop;
 	}
-	
+	{
 		this.name = name;
 		this.eyeCount = eyeCount;
+		int arms;
 		this.armCount = arms;
+		double tentacleCount;
 		this.tentacleAmount = tentacleCount;
 		this.hasBloop = hasBloop;
 	}
