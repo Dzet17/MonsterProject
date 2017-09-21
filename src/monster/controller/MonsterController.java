@@ -115,4 +115,22 @@ public class MonsterController
 		return valid;
 	}
 	
+	private boolean isValidDouble(String sampleDouble)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Double.parseDouble(sampleDouble);
+			valid = true;
+		}
+		catch (NumberFormatException error)
+		{
+			popup.displayText("Only double values are valid" + sampleDouble + " is not");
+		}
+		
+		return valid;
+		{
+		
+	}
 }
