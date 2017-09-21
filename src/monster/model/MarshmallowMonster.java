@@ -8,7 +8,7 @@ public class MarshmallowMonster
 	private int armCount;
 	private double tentacleAmount;
 	private boolean hasBloop;
-	
+	//Directly connects to MarshmallowMonster
 	public MarshmallowMonster()
 	{
 		//Unless we specify values all data members
@@ -49,7 +49,7 @@ public class MarshmallowMonster
 	{
 		this.tentacleAmount = tentacleAmount;
 	}
-	
+	//Sets all inputs for later interactivity
 	public void setBloop(boolean hasBloop)
 	{
 		this.hasBloop = hasBloop;

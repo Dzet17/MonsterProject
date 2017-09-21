@@ -1,9 +1,9 @@
 package monster.controller;
-
+//I imported this from gitHub but now everything is not compatible and won't run properly
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
-
+//imports all data from other classes
 public class MonsterController 
 {
 	private MonsterDisplay popup;
@@ -29,7 +29,8 @@ public class MonsterController
 		interactWithTheMonster(realMonster);
 		
 	}
-		
+//creates popups for the application
+//took over the in app text
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
 	{
 //		System.out.println(currentMonster.getName() + " wants to know what to eat next");
@@ -48,8 +49,8 @@ public class MonsterController
 		specialAnswer = Integer.parseInt(unconverted);
 		@SuppressWarnings("resource")
 		Scanner myScanner = new Scanner(System.in);
-		int consumed = myScanner.nextInt();
-		
+		int consumed = 0;
+		consumed = specialAnswer;
 		if(consumed < 0)
 		{
 			System.out.println("You cannot eat a negative amount silly human");
@@ -96,7 +97,7 @@ public class MonsterController
 	popup.displayText(answer);
 	
 	}
-
+//code for interconnecting the different classes creating an interactive app
 	//helper methods
 	private boolean isValidInteger(String sample)
 	{
@@ -130,7 +131,38 @@ public class MonsterController
 		}
 		
 		return valid;
-		{
-		
 	}
+		private boolean isValidBoolean(String sampleBoolean)
+		{
+			boolean valid = false;
+			
+			try
+			{
+			Boolean.parseBoolean(sampleBoolean);
+			valid = true;
+			}
+			catch(NumberFormatException error)
+			{
+				popup.displayText("Only boolean values are allowed " + sampleBoolean + " is not valid");
+			}
+			
+			return value;
+	}
+//Booleans created to state things as true or false, but also giving a catch in case something is incorrectly inputted	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }
