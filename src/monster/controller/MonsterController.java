@@ -15,22 +15,32 @@ public class MonsterController
 	public void start()
 	{
 		MarshmallowMonster sample = new MarshmallowMonster();
-		System.out.println(sample);
+//		System.out.println(sample);
+		popup.displayText(sample.toString());
 		MarshmallowMonster realMonster = new MarshmallowMonster("Scary", 4, 3, 4, true);
 		
-		System.out.println(realMonster);
-		System.out.println("John is hungry, so he is going to eat a tentacle");
+//		System.out.println(realMonster);
+		popup.displayText(realMonster.toString());
+//		System.out.println("John is hungry, so he is going to eat a tentacle");
+		popup.displayText("John is hungry, so he is going to eat a tentacle");
 		realMonster.TentacleAmount(3);
-		System.out.println(realMonster);
-		
+//		System.out.println(realMonster);
+		popup.displayText(realMonster.toString());
 		interactWithTheMonster(realMonster);
+		
 	}
 		
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
 	{
-		System.out.println(currentMonster.getName() + " wants to know what to eat next");
-		System.out.println(currentMonster.getName() + " suggests arms, they have " + currentMonster.getarmCount());
-		System.out.println("How many do you want to eat?");
+//		System.out.println(currentMonster.getName() + " wants to know what to eat next");
+		popup.displayText(currentMonster.getName() + "wants to know what to eat next");
+//		System.out.println(currentMonster.getName() + " suggests arms, they have " + currentMonster.getarmCount());
+		popup.displayText(currentMonster.getName() + " suggests arms, they have " + currentMonster.getarmCount());
+//		System.out.println("How many do you want to eat?");
+		int specialAnswer;
+		String unconverted = popup.getResponse("How many do you want to eat?");
+		
+		specialAnswer = Integer.parseInt(unconverted);
 		@SuppressWarnings("resource")
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = myScanner.nextInt();
@@ -81,5 +91,23 @@ public class MonsterController
 	popup.displayText(answer);
 	
 	}
+
+	//helper methods
+	private boolean isValidInteger(String sample)
+	{
+		boolean valid = false;
+		
+		try
+		{
+			Integer.parseInt(sample);
+			valid = true;
+		}
+		catch(NumberFormatException error)
+		{
+			popup.displayText("Only integer values are valid: " + sample + "is not");
+		}
+		
+		return valid;
 	}
-}	
+	
+}
