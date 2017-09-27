@@ -14,6 +14,19 @@ public class MonsterController
 	
 	public void start()
 	{
+		boolean finished = true;
+		int count = 0;
+//		while(count < 100)
+//		{
+//			popup.displayText("I am so neat");
+//			count+=1;
+//		}
+//
+		for(int loop= 0; loop < 15; loop += 1) 
+		{
+			popup.displayText("I an looping " + (loop + 1) + "times out of 15");
+		}
+		
 		MarshmallowMonster sample = new MarshmallowMonster();
 //		System.out.println(sample);
 		popup.displayText(sample.toString());
@@ -46,25 +59,44 @@ public class MonsterController
 			specialAnswer = Integer.parseInt(unconverted);
 		}
 		
+		while(!isValidInteger(unconverted))
+		{
+			specialAnswer = Integer.parseInt(unconverted);
+		}
+		
+		
+		
+			
 		specialAnswer = Integer.parseInt(unconverted);
 		@SuppressWarnings("resource")
 		Scanner myScanner = new Scanner(System.in);
 		int consumed = 0;
 		consumed = specialAnswer;
 		if(consumed < 0)
+//		{
+//			System.out.println("You cannot eat a negative amount silly human");
+//		}
+//		else if(consumed == 0)
+//		{
+//			System.out.println("Not that hungry are you");
+//		}
+//		else if(consumed > currentMonster.getarmCount())
+//		{	
+//			System.out.println("That is impossible - I only have " + currentMonster.getarmCount());
+//		}
+//		else
+//		{
+
+		int consumed = 0;
+		String answerNumber = popup.getResponse("Q to ask");
+		
+		while(!isValidInteger(unconverted))
 		{
-			System.out.println("You cannot eat a negative amount silly human");
+			popup.displayText("Try again!");
 		}
-		else if(consumed == 0)
-		{
-			System.out.println("Not that hungry are you");
-		}
-		else if(consumed > currentMonster.getarmCount())
-		{	
-			System.out.println("That is impossible - I only have " + currentMonster.getarmCount());
-		}
-		else
-		{
+				{
+					
+
 			currentMonster.setarmCount(currentMonster.getarmCount() - consumed);
 			System.out.println("Thank you so much, I only have this many arms now: " + currentMonster.getarmCount());
 		}
