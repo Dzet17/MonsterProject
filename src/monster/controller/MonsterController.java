@@ -3,14 +3,19 @@ package monster.controller;
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.MonsterDisplay;
+import java.util.list;
+import java.util.ArrayList;
 //imports all data from other classes
 public class MonsterController 
 {
 	private MonsterDisplay popup;
+	private List<Marshmallow> mosnterList;
 	
 	public MonsterController()
 	{
-		popup = new MonsterDisplay();	}
+		popup = new MonsterDisplay();
+		monsterList = new ArrayList
+	}
 	
 	public void start()
 	{
@@ -39,9 +44,30 @@ public class MonsterController
 		realMonster.TentacleAmount(3);
 //		System.out.println(realMonster);
 		popup.displayText(realMonster.toString());
-		interactWithTheMonster(realMonster);
 		
+		monsterList.add(realMonster);
+		monsterList.add(sample);
+		
+		interactWithTheMonster(realMonster);
 	}
+	
+	private void testList()
+	{
+		for(int index = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getname());
+			String newName = popupgetResponse("What should my new name be?");
+			popup.displayText(currentMonster.getName());
+		}
+			for (marshmallowMosnter current : MonsterList)
+			{
+				popup.displayText(current.getName());
+				String newName = popup.getResponse("what should my name be?");
+				current.setName(newName);
+				popup.displayText(current.getName());
+			}
+	
 //creates popups for the application
 //took over the in app text
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
